@@ -11,8 +11,7 @@ The purpose of this repo is to practice TDD, Alogrithms & Data Structure daily.
 
 ### Instructions
 
-**Practice at least 5 days per week.**
-
+**Practice at least 5 days per week.**  
 **30 or 40 minutes max.**
 
 1. Run `npm install` to install dependencies
@@ -21,6 +20,5 @@ The purpose of this repo is to practice TDD, Alogrithms & Data Structure daily.
 4. Write out all the test specs FIRST and watch them fail
 5. Implement a solution
 
-`mocha` to run all tests
-
+`mocha` to run all tests  
 `mocha test/fileName.js` to run a specific file
