@@ -20,7 +20,7 @@ The purpose of this repo is to practice TDD, Alogrithms & Data Structure daily.
 4. Write out all the test specs FIRST and watch them fail
 5. Implement a solution
 
-#### Run tests
+### Run tests
 
 `mocha` to run all tests  
 `mocha test/fileName.js` to run a specific file
