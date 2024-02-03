@@ -30,10 +30,49 @@ describe("Dynamic Array", () => {
     expect(dynamicArr.read(3)).to.equal(str);
   });
 
-  it("Can 'push()' adding a value to the end of the array");
-  it("Can 'pop()' removing the last element in the array");
-  it("Can 'unshift()' adding an element to front of the array");
-  it("Can 'shift()' removing the first element in the array");
+  it("Can 'push()' adding a value to the end of the array", () => {
+    dynamicArr.push(10);
+    expect(dynamicArr.read(dynamicArr.length - 1)).to.equal(10);
+
+    dynamicArr.push(35);
+    expect(dynamicArr.read(dynamicArr.length - 1)).to.equal(35);
+
+    dynamicArr.push(1);
+    dynamicArr.push(5);
+    dynamicArr.push(8);
+    expect(dynamicArr.read(dynamicArr.length - 1)).to.equal(8);
+  });
+
+  it("Can 'pop()' removing the last element in the array", () => {
+    dynamicArr.push(1);
+    dynamicArr.push(5);
+    dynamicArr.push(8);
+    expect(dynamicArr.pop()).to.equal(8);
+    expect(dynamicArr.pop()).to.equal(5);
+    expect(dynamicArr.length).to.equal(1);
+  });
+
+  it("Can 'unshift()' adding an element to front of the array", () => {
+    dynamicArr.push(2);
+    dynamicArr.push(3);
+    dynamicArr.push(4);
+    dynamicArr.unshift(25);
+    expect(dynamicArr.read(0)).to.equal(25);
+
+    dynamicArr.unshift(150);
+    expect(dynamicArr.read(0)).to.equal(150);
+    expect(dynamicArr.length).to.equal(5);
+  });
+
+  it("Can 'shift()' removing the first element in the array", () => {
+    dynamicArr.push(2);
+    dynamicArr.push(3);
+    dynamicArr.push(4);
+    expect(dynamicArr.shift()).to.equal(2);
+    expect(dynamicArr.shift()).to.equal(3);
+    expect(dynamicArr.length).to.equal(1);
+  });
+
   it("Can use 'indexOf()' to find a value in the array");
   it("Doubles in size by calling 'resize()'");
   it("Resizes automatically if capacity is reached");
