@@ -73,7 +73,30 @@ describe("Dynamic Array", () => {
     expect(dynamicArr.length).to.equal(1);
   });
 
-  it("Can use 'indexOf()' to find a value in the array");
-  it("Doubles in size by calling 'resize()'");
-  it("Resizes automatically if capacity is reached");
+  it("Can use 'indexOf()' to find a value in the array", () => {
+    dynamicArr.push("hello");
+    dynamicArr.push("world");
+    dynamicArr.push("world");
+    expect(dynamicArr.indexOf("world")).to.equal(1);
+    expect(dynamicArr.indexOf("hello")).to.equal(0);
+    expect(dynamicArr.indexOf("notHere")).to.equal(-1);
+  });
+
+  it("Doubles in size by calling 'resize()'", () => {
+    dynamicArr = new DynamicArray(8);
+    dynamicArr.resize();
+    expect(dynamicArr.capacity).to.equal(16);
+    dynamicArr.resize();
+    expect(dynamicArr.capacity).to.equal(32);
+  });
+
+  it("Resizes automatically if capacity is reached", () => {
+    dynamicArr = new DynamicArray(2);
+    dynamicArr.push(2);
+    dynamicArr.push(3);
+    expect(dynamicArr.capacity).to.equal(4);
+    dynamicArr.push(2);
+    dynamicArr.push(3);
+    expect(dynamicArr.capacity).to.equal(8);
+  });
 });
